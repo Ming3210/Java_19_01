@@ -10,10 +10,15 @@ public interface ProductProcessor {
         }
     };
     default void hasExpensiveProduct(List<Product> products){
+        boolean isExist = false;
         for(Product product : products){
             if(product.getPrice() > 100){
                 System.out.println(product.getName());
+                isExist = true;
             }
+        }
+        if(!isExist){
+            System.out.println("No product with price more than 100");
         }
     }
 }

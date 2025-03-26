@@ -12,16 +12,10 @@ public class B3 {
         System.out.println("Nhap b: ");
         int b = scanner.nextInt();
 
-
-        BinaryOperator<Integer> addition = MathOperations::add;
-        BinaryOperator<Integer> subtraction = MathOperations::subtract;
-        BinaryOperator<Integer> multiplication = MathOperations::multiply;
-        BinaryOperator<Integer> division = MathOperations::divide;
-
-        System.out.println("Addition: " + addition.apply(a, b));
-        System.out.println("Subtraction: " + subtraction.apply(a, b));
-        System.out.println("Multiplication: " + multiplication.apply(a, b));
-        System.out.println("Division: " + division.apply(a, b));
+        System.out.println("a+b = "+MathOperations.add(a,b));
+        System.out.println("a-b = "+MathOperations.subtract(a,b));
+        System.out.println("a*b = "+MathOperations.multiply(a,b));
+        System.out.println("a/b = "+MathOperations.divide(a,b));
 
     }
 

@@ -8,9 +8,18 @@ public class B1 {
     public static void main(String[] args) {
         String[] arr = new String[]{"Java", "", "Lambda", "Stream", "", "Functional"};
 
+        List<String> str = List.of(arr);
+        List<String> newStr = new ArrayList<>();
 
-        List<String> result = Arrays.stream(arr).filter(Predicate.not(String::isEmpty)).collect(Collectors.toList());
+        Predicate<String> isNull = strings -> strings != "";
 
-        System.out.println(result);
+        for (String s : str){
+            if (isNull.test(s)) {
+                newStr.add(s);
+            }
+        }
+
+        System.out.println(newStr);
+
     }
 }
